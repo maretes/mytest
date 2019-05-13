@@ -1,0 +1,32 @@
+.single-post {
+  max-width: 800px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 3px;
+  margin: 0 auto 5px;
+  padding: 30px 5px 40px 5px;
+  text-align: center;
+  color: #303030;
+  font-weight: 400;
+  font-family: 'OpenSans', sans-serif;
+
+  .post-title {
+    font-family: $montserrat-promolod-font;
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+   p {
+     margin-bottom: 20px;
+     text-align: left;
+     line-height: 1.5;
+     font-family: $lato-promolod-font;
+
+     @media screen and (min-width: 400px) {
+       padding: 0 50px;
+     }
+   }
+
+  iframe {
+    width: 100%;
+  }
+}

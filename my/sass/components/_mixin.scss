@@ -1,0 +1,109 @@
+$main_color: #6CB31B;
+$second_color: #55D6F5;
+$promolod-brand-1: rgb(136, 213, 244);
+$promolod-brand-2: rgb(66, 66, 66);
+$promolod-brand-3: rgb(148, 255, 255);
+$promolod-brand-4: rgb(52, 63, 80);
+$promolod-brand-5: rgb(52, 63, 80);
+$promolod-brand-6: #13aab1;
+$background-blog: rgba(72, 72, 72, 0.73);
+$background-report: #fff;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700,700i,900&subset=cyrillic');
+$montserrat-promolod-font: 'Montserrat Alternates', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$lato-promolod-font:'Lato', sans-serif;
+body {
+  font-family: $lato-promolod-font;
+}
+main {
+  padding-top: 95px;
+  z-index: 1;
+}
+
+
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  width: 213px;
+  margin: 27px auto;
+  padding: 0 12px;
+
+  background: $promolod-brand-1;
+  border-radius: 6px;
+  border: none;
+  color: $promolod-brand-2;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 48px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    background: $promolod-brand-2;
+    color: $promolod-brand-1;
+  }
+}
+
+@mixin rollover {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  background: rgba(#000, .3);
+  box-sizing: border-box;
+  color: #fff;
+
+  opacity: 0;
+  transition: all .5s ease;
+
+  h2 {
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  p {
+
+    padding: 0 30px 25px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+
+  }
+  &:hover {
+    opacity: 1;
+    transition: all .5s ease;
+
+    h2 {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 0.1s;
+    }
+
+    p {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 0.1s;
+    }
+  }
+}
+@mixin container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}

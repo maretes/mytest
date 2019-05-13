@@ -1,0 +1,513 @@
+@import "../components/mixin";
+
+.slick-slider
+{
+  position: relative;
+
+  display: block;
+  box-sizing: border-box;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus
+{
+  outline: none;
+}
+.slick-list.dragging
+{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+  display: table;
+
+  content: '';
+}
+.slick-track:after
+{
+  clear: both;
+}
+.slick-loading .slick-track
+{
+  visibility: hidden;
+}
+
+.slick-slide
+{
+  display: none;
+  float: left;
+
+  height: 100%;
+  min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+  float: right;
+}
+.slick-slide img
+{
+  display: block;
+  margin: 0 auto;
+}
+.slick-slide.slick-loading img
+{
+  display: none;
+}
+.slick-slide.dragging img
+{
+  pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+  display: block;
+}
+.slick-loading .slick-slide
+{
+  visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+  display: block;
+
+  height: auto;
+
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.front-page {
+  &__wrapper {}
+  &__hero-section {
+    min-height: 60vh;
+    position: relative;
+    padding-top: 70px;
+    &::before {
+      background-color: $promolod-brand-2;
+      background-size: cover;
+      background: no-repeat 3% center;
+      content: ' ';
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      will-change: transform;
+      z-index: -1;
+      @media (min-width: 1016px) {
+        background: no-repeat center center;
+        background-size: cover;
+
+      }
+      //@media only screen and (min-height: 700px){
+      //  height: 100%;
+      //}
+    }
+    &__title {
+      text-align: center;
+      margin: 40px auto;
+      font-size: 30px;
+      font-family: $montserrat-promolod-font;
+      letter-spacing: 5px;
+      font-weight: 700;
+      color: $promolod-brand-1;
+      @media only screen and (min-width: 768px) {
+        font-size: 50px;
+        text-align: left;
+        padding-left: 110px;
+      }
+    }
+    & .front-page__hero-section__content-container {
+      margin: 0 auto;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      line-height: 30px;
+      letter-spacing: 1.2px;
+      color: $promolod-brand-2;
+      padding: 50px 15px;
+      text-align: left;
+      align-items: center;
+      justify-content: center;
+      @media only screen and (min-width: 768px){
+        padding: 70px 0;
+        margin: 0;
+      }
+      & p {
+        padding-bottom: 40px;
+        font-family: $lato-promolod-font;
+      }
+    }
+    &__content-border {
+      margin: 0 auto;
+      max-width: 800px;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      padding: 5px;
+    }
+    &__mission__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 10px;
+      font-size: 16px;
+      font-family: $montserrat-promolod-font;
+      text-align: center;
+      flex-direction: column;
+      text-transform: uppercase;
+      background-color: $promolod-brand-1;
+      & h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    }
+    & .social-media-icons {
+      font-size: 25px;
+      display: flex;
+      & li {
+        margin: 10px;
+        & a {
+          transition: 0.3s;
+        }
+      }
+      @media only screen and (min-width: 940px) {
+        display: none;
+      }
+    }
+  }
+  &__valuables-section {
+    background-color: $promolod-brand-2;
+    &__container {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row wrap;
+    }
+    &__title {
+      padding: 30px 0 0;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: $montserrat-promolod-font;
+      border-top: 3px solid $promolod-brand-1;
+      color: $promolod-brand-1;
+      text-transform: uppercase;
+    }
+    &__item {
+      &__wrapper {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-top: 30px;
+        padding: 30px 15px;
+        &:hover {
+          background-color: #404040;
+        }
+        & img {
+          opacity: 0.5;
+        }
+        @media only screen and (min-width: 400px) {
+          max-width: 150px;
+          height: 125px;
+        }
+        & h2 {
+          font-size: 16px;
+          padding-top: 20px;
+          font-family: $montserrat-promolod-font;
+          color: rgba(255, 255, 255, 0.61);
+        }
+      }
+      &__content-wrapper{
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-radius: 10px;
+        margin: 50px auto 30px;
+        padding: 30px;
+        max-width: 950px;
+        background-color: #353535;
+        color: white;
+        line-height: 27px;
+      }
+      &__content__show {
+        margin-bottom: 400px;
+        background-color: #353535;
+        @media only screen and (min-width: 405px){
+          margin-bottom: 340px;
+        }
+        @media only screen and (min-width: 585px){
+          margin-bottom: 230px;
+        }
+        @media only screen and (min-width: 960px){
+          margin-bottom: 200px;
+        }
+        &:hover {
+          background-color: #353535;
+        }
+        & .front-page__valuables-section__item__content-wrapper{
+          display: block;
+        }
+        & img {
+          opacity: 1;
+        }
+        & h2 {
+          color: #ffffff;
+          position: relative;
+          &::after {
+            border: medium solid transparent;
+            content: "";
+            left: 50%;
+            position: absolute;
+            height: 0;
+            bottom: -75px;
+            width: 0;
+            border-color: #353535 rgba(255, 212, 52, 0) rgba(255, 212, 52, 0);
+            border-width: 25px;
+            margin-left: -25px;
+          }
+        }
+      }
+    }
+    &__image__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 91px;
+      & img {
+        height: 100%;
+      }
+    }
+  }
+  &__work-directions {
+    background-color: $promolod-brand-2;
+    & .container-elastic {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row wrap;
+      padding-bottom: 70px;
+    }
+    &__item{
+      &__wrapper {
+        margin: 30px 5px 0;
+        max-width: 350px;
+      }
+      &__image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 200px;
+        & img {
+          height: 100%;
+        }
+      }
+      &__title {
+        text-align: center;
+        color: $promolod-brand-1;
+        letter-spacing: 1.2px;
+        font-size: 16px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-family: $montserrat-promolod-font;
+      }
+      &__content {
+        text-align: justify;
+        font-size: 14px;
+        color: white;
+        letter-spacing: 1.1px;
+        line-height: 17px;
+        margin-top: 15px;
+        font-family: $lato-promolod-font;
+      }
+    }
+  }
+  &__team-section {
+    background-color: $promolod-brand-2;
+    &__wrapper {
+      padding-bottom: 60px;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row wrap;
+      @media only screen and (min-width: 1084px) {
+        justify-content: space-between;
+      }
+    }
+    &__item {
+      &__wrapper {
+        text-align: center;
+        display: flex;
+        margin: 50px 10px 0;
+        width: 100%;
+        max-width: 500px;
+        flex-direction: column;
+        @media only screen and (min-width: 450px) {
+          flex-direction: row;
+          text-align: left;
+        }
+      }
+      &__image__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 150px;
+        width: 100%;
+        height: 150px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        overflow: hidden;
+        margin: 0 auto;
+        @media only screen and (min-width: 450px) {
+          margin: 0;
+        }
+        & img {
+          height: 104%;
+          max-width: 1000px;
+        }
+      }
+      &__text__wrapper {
+        margin: 40px 0 0;
+        @media only screen and (min-width: 450px) {
+          margin: 40px 0 0 20px;
+        }
+      }
+      &__content {
+        letter-spacing: 1.1px;
+        margin: 10px 0;
+        font-size: 14px;
+        font-family: $lato-promolod-font;
+        color: #ffffff;
+      }
+      &__title {
+        font-size: 16px;
+        font-family: $montserrat-promolod-font;
+        color: $promolod-brand-1;
+        font-weight: bold;
+      }
+    }
+  }
+  &__partners-section {
+    background-color: $promolod-brand-2;
+    &__title {
+      padding-bottom: 30px;
+    }
+    &__slider {
+      padding: 20px 30px;
+    }
+    & .slick-track {
+      display: flex;
+      align-items: center;
+    }
+    &__slider__wrapper {
+      background-color: #ffffff;
+    }
+    &__slider__buttons__wrapper {
+      overflow: visible;
+      position: relative;
+    }
+    &__slider__buttons {
+      border: none;
+      color: black;
+      font-size: 40px;
+      position: absolute;
+      opacity: 0.5;
+      top: 60px;
+      width: 25px;
+      height: 40px;
+      transition: 0.3s;
+      background-color: transparent;
+      outline: none;
+      z-index: 999;
+      &:hover {
+        color: #4a4a4a;
+      }
+      @media only screen and (min-width: 600px){
+        cursor: pointer;
+        top: 70px;
+      }
+    }
+    &__slider__prev {
+      left: 0;
+      @media only screen and (min-width: 1235px) {
+        left: -10px;
+      }
+    }
+    &__slider__next {
+      right: 0;
+      @media only screen and (min-width: 1235px) {
+        right: -10px;
+      }
+    }
+    &__item__wrapper {
+      @media only screen and (min-width: 500px) {
+        padding: 0 10px;
+      }
+      & img {
+        transition: 0.3s;
+        @media only screen and (min-width: 768px) {
+          filter: grayscale(100%);
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+      }
+    }
+  }
+  &__video-section {
+    text-align: center;
+    background-color: $promolod-brand-2;
+  }
+}
+.teammate__facebook {
+  font-size: 22px;
+  margin-left: 20px;
+  text-align: center;
+  width: 20px;
+  display: inline-block;
+}
